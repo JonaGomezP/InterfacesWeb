@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+        }
+        
+        form {
+            margin-top: 20px;
+            margin-left: 20px;
+            width: 250px;
+            height: 280px;
+            border: solid 1px rgba(216, 130, 1, 0.692);
+            color: black;
+            font-size: 20px;
+            font-family: serif;
+            padding: 10px;
+        }
+        
+        label {
+            margin: 20px, 30px;
+            margin-left: 10px;
+        }
+        
+        input {
+            margin-left: 10px;
+            background: rgba(000, 000, 000, 0.1);
+            border: solid rgba(000, 000, 000, 0.3) 0.5px;
+        }
+        
+        select {
+            margin-top: 20px;
+            margin-left: 10px;
+        }
+        
+        input[type="checkbox"] {
+            margin: 20px 0;
+            margin-left: 10px;
+        }
+        
+        table {
+            margin-top: 20px;
+            margin-left: 20px;
+            width: 400px;
+            border: solid black 1px;
+            border-collapse: separate;
+            border-spacing: 5px;
+        }
+        
+        table tbody {
+            text-align: left;
+        }
+        
+         :visited {
+            text-decoration: none;
+            color: blue;
+        }
+        
+         :active {
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="practica1.php" method="get">
+        <label for="nombre">Nombre: </label><br>
+        <input type="text" name="nombre"><br>
+        <label for="apellidos">Apellidos: </label><br>
+        <input type="text" name="apellidos"><br>
+        <label for="usuario">Usuario: </label><br>
+        <input type="text" name="usuario"><br>
+        <select name="deporte" id="dep">
+            <option value="padel">Pádel</option>
+            <option value="futbol">Fútbol</option>
+            <option value="tenisf1">Tenis</option>
+            <option value="">Fórmula !</option>
+        </select><br>
+        <input type="checkbox" name="familia_numerosa" id="fn">
+        <label for="familia_numerosa">Acepto los términos y condiciones</label>
+    </form>
+    <table border="solid black 1px;">
+        <thead>
+            <tr>
+                <th>Aplicación</th>
+                <th>Enlace</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Wireframe.cc</td>
+                <td>
+                    <a href="https://wireframe.cc/">Accede</a>
+                </td>
+            </tr>
+            <tr>
+                <td>Balsamiq</td>
+                <td>
+                    <a href="https://balsamiq.com/">Accede</a>
+                </td>
+            </tr>
+            <tr>
+                <td>Proto.io</td>
+                <td>
+                    <a href="https://proto.io/">Accede</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

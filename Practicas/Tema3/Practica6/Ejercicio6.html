@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fotos y enlaces</title>
+    <style>
+        * {
+            margin: 0;
+        }
+        
+        body {
+            display: flex;
+            justify-content: center;
+            background: linear-gradient(to left, #333, #333 50%, #eee 75%, #333 75%);
+        }
+        
+        #gris {
+            position: relative;
+            margin-top: 20px;
+            width: 100%;
+            text-align: center;
+            color: white;
+        }
+        
+        table {
+            text-align: left;
+            width: auto;
+            background-color: rgba(255, 255, 153, 0.5);
+            margin-left: auto;
+            margin-right: auto;
+            height: auto;
+        }
+        
+        td {
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="gris">
+        <h1>Tipos de vinos</h1>
+        <table border="solid black 5px">
+            <thead>
+                <tr>
+                    <th>Vermut</th>
+                    <th>Chacoli</th>
+                    <th>Moscatel</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <a href="https://es.wikipedia.org/wiki/Verm%C3%BA"><img src="../../../img/vermut.jpg" alt="moscatel"></a>
+                    </td>
+                    <td>
+                        <a href="https://es.wikipedia.org/wiki/Chacol%C3%AD"><img src="../../../img/chacoli.jpeg" alt="moscatel"></a>
+                    </td>
+                    <td>
+                        <a href="https://es.wikipedia.org/wiki/Vino_moscatel"><img src="../../../img/moscatel.jpg" alt="moscatel"></a>
+                    </td>
+                </tr>
+            </tbody>
+            <thead>
+                <th>Tinto</th>
+                <th>Blanco</th>
+                <th>Rosado</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <a href="https://es.wikipedia.org/wiki/Vino_tinto"><img src="../../../img/moscatel.jpg" alt="moscatel"></a>
+                    </td>
+                    <td>
+                        <a href="https://es.wikipedia.org/wiki/Vino_blanco"><img src="../../../img/vino-blanco.jpg" alt="moscatel"></a>
+                    </td>
+                    <td>
+                        <a href="https://es.wikipedia.org/wiki/Vino_rosado"><img src="../../../img/rosado.jpg" alt="moscatel"></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla</title>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            background-image: url("../../../img/saw.jpg");
+            background-position: center 0%;
+            background-repeat: no-repeat;
+        }
+
+        #gris {
+            position: relative;
+            margin-top: 20px;
+            width: 100%;
+            text-align: center;
+        }
+        table{
+            text-align: left;
+            width: 50%;
+            background-color: rgb(255, 255, 153);
+            margin-left: auto;
+            margin-right: auto;
+            height: 50%;
+        }
+        th{
+            vertical-align: middle;
+            background-color: white;
+            text-align: center;
+        }
+        td{
+            vertical-align: middle;
+             text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="gris">
+        <table border="4" cellpadding="2" cellspacing="2";>
+            <caption><br><br><br><br><br><br><br><br><br><br><br><br><br></caption>
+            <tbody>
+                <tr>
+                    <th colspan="2" rowspan="1">ENCABEZADO<br></th>
+                </tr>
+                <tr>
+                    <td>CELDA1<br></td>
+                    <td>CELDA2<br></td>
+                </tr>
+            </tbody>
+            </table>
+    </div>
+
+</body>
+
+</html>
