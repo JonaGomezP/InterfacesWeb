@@ -1,20 +1,26 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
-body{
+
+body {
     background-color: black;
 }
-header{
+
+header {
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: white;
+    opacity: 0.6;
 }
-#logo{
+
+#logo {
     width: 250px;
     height: 250px;
     object-fit: cover;
 }
-#div_logo{
+
+#div_logo {
     align-self: center;
 }
