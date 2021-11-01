@@ -5,20 +5,31 @@
 
 body {
     background-color: black;
+    height: 1000px;
 }
 
 header {
-    display: flex;
-    position: relative;
-    margin: 1em 0;
-    background-color: white;
-    opacity: 0.4;
     width: 100%;
+    height: 200px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.7), #808080, #404040, black);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
 }
 
-header img {
-    width: 500px;
-    height: 200px;
+#rrss {
+    position: -webkit-sticky;
+    position: sticky;
+    float: right;
+}
+
+#redes_sociales {
+    display: flex;
+    flex-direction: column;
+}
+
+.icono {
+    width: 40px;
+    height: 40px;
     object-fit: cover;
-    margin-left: 3rem;
 }
