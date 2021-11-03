@@ -1,0 +1,19 @@
+$colorLetra:white;
+$margenes:20px;
+$fondoCuerpo :"../img/saw.jpg";
+body {
+    background-image: url($fondoCuerpo);
+    background-repeat: no-repeat;
+    background-image: fixed;
+    background-image: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#prueba {
+    background: red;
+    color: $colorLetra;
+    margin: $margenes;
+}

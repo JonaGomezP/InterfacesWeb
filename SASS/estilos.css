@@ -1,0 +1,14 @@
+body {
+  background-image: url("../img/saw.jpg");
+  background-repeat: no-repeat;
+  background-image: fixed;
+  background-image: center;
+  background-size: cover;
+}
+
+#prueba {
+  background: red;
+  color: white;
+  margin: 20px;
+}
+/*# sourceMappingURL=estilos.css.map */
