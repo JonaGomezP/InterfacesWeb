@@ -1,85 +1,95 @@
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            background-color: black;
-        }
-        
-        header {
-            display: flex;
-            width: 100%;
-            height: 500px;
-            background: linear-gradient(to bottom, rgba(138, 138, 138, 0.7), #444444, #313131, black);
-            display: flex;
-            flex-direction: row;
-            justify-content: flex-start;
-            color: #ccb102;
-            flex-direction: row-reverse;
-            justify-content: space-between;
-            position: fixed;
-        }
-        
-        #logo_cabecera {
-            position: relative;
-            width: 700px;
-            height: 300px;
-            margin: 50px 100px;
-            line-height: 500px;
-            border: solid white;
-        }
-        
-        nav {
-            position: relative;
-            display: inline-flex;
-            width: 900px;
-            height: 300px;
-            margin: 50px 100px;
-            line-height: 500px;
-            border: solid white;
-        }
-        
-        nav ul {
-            display: inline-flex;
-            width: 100%;
-            line-height: 300px;
-            list-style: none;
-            position: absolute;
-            margin: 0 90px;
-        }
-        
-        nav ul li {
-            width: 250px;
-            margin: 0 10px;
-            list-style-position: outside;
-        }
-        
-        nav ul li img {
-            width: 100px;
-            margin-top: 115px;
-        }
-        
-        #rrss {
-            position: -webkit-sticky;
-            position: sticky;
-            float: right;
-        }
-        
-        #redes_sociales {
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .icono {
-            width: 40px;
-            height: 40px;
-            object-fit: cover;
-        }
-        
-        @media all and (max-width:1000px) {
-            header img {
-                display: none;
-            }
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+}
+
+header {
+    position: relative;
+    margin: 0 auto;
+    width: 90%;
+    height: 300px;
+    background: radial-gradient(circle 200px, rgb(48, 48, 48) 20%, rgb(20, 20, 20) 55%, black 75%);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    color: #ccb102;
+    flex-direction: row;
+    justify-content: space-between;
+    justify-content: center;
+    border: solid white;
+}
+
+nav {
+    position: relative;
+    display: inline-flex;
+    width: 100%;
+    height: 200px;
+    margin: 50px 100px;
+    line-height: 300px;
+    justify-content: space-between;
+    justify-content: center;
+    padding: 0;
+}
+
+nav ul {
+    display: inline-flex;
+    width: 100%;
+    line-height: 200px;
+    list-style: none;
+    position: absolute;
+    margin: 0 0;
+    height: 200px;
+    justify-content: space-between;
+}
+
+a {
+    text-decoration: none;
+}
+
+nav ul a li {
+    width: 20em;
+    margin: 0 10px;
+    list-style-position: outside;
+    text-align: center;
+    height: 200px;
+    line-height: 200px;
+}
+
+nav ul a li img {
+    width: 200px;
+    height: 150px;
+    line-height: 200px;
+    align-items: center;
+    margin-top: 7%;
+}
+
+.icono {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+body:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: url("../img/mi-foto.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    opacity: 0.3;
+}
+
+@media all and (max-width: 1000px) {
+    header img {
+        display: none;
+    }
+}
