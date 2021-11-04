@@ -1,95 +1,48 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    background-color: black;
-}
-
-header {
-    position: relative;
-    margin: 0 auto;
-    width: 90%;
-    height: 300px;
-    background: radial-gradient(circle 200px, rgb(48, 48, 48) 20%, rgb(20, 20, 20) 55%, black 75%);
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    color: #ccb102;
-    flex-direction: row;
-    justify-content: space-between;
-    justify-content: center;
-    border: solid white;
-}
-
-nav {
-    position: relative;
-    display: inline-flex;
-    width: 100%;
-    height: 200px;
-    margin: 50px 100px;
-    line-height: 300px;
-    justify-content: space-between;
-    justify-content: center;
-    padding: 0;
-}
-
-nav ul {
-    display: inline-flex;
-    width: 100%;
-    line-height: 200px;
-    list-style: none;
-    position: absolute;
-    margin: 0 0;
-    height: 200px;
-    justify-content: space-between;
-}
-
-a {
-    text-decoration: none;
-}
-
-nav ul a li {
-    width: 20em;
-    margin: 0 10px;
-    list-style-position: outside;
-    text-align: center;
-    height: 200px;
-    line-height: 200px;
-}
-
-nav ul a li img {
-    width: 200px;
-    height: 150px;
-    line-height: 200px;
-    align-items: center;
-    margin-top: 7%;
-}
-
-.icono {
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
-}
-
-body:before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-image: url("../img/mi-foto.png");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    opacity: 0.3;
-}
-
-@media all and (max-width: 1000px) {
-    header img {
-        display: none;
-    }
-}
+  #top {
+      top: 0;
+      padding: 0;
+      position: absolute;
+      width: 100%;
+      height: auto;
+      background-color: rgba(255, 255, 255, 0.3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1;
+  }
+  
+  #top p {
+      margin: 0;
+      letter-spacing: 1px;
+      font-family: 'Josefin Slab', serif;
+      font-size: 42px;
+  }
+  
+  section {
+      position: relative;
+      width: 90%;
+      height: 500px;
+      right: auto;
+      z-index: 0;
+      background-color: rgba(255, 255, 255, 0.05);
+      justify-content: center;
+      align-items: center;
+      top: 5em;
+      z-index: 1;
+  }
+  
+  #articulo_carrusel {
+      position: relative;
+      left: 0;
+  }
+  
+  #myCarousel {
+      width: fit-content;
+      height: fit-content;
+  }
+  
+  .logo_nombre {
+      width: fit-content;
+      height: fit-content;
+      object-fit: cover;
+  }
