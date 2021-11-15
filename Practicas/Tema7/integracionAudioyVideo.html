@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio y video</title>
+    <script>
+        window.onload = function () {
+            let audio = document.querySelector("audio");
+            let video = document.querySelector("video");
+            audio.volume = 0.1;
+            audio.play();
+            video.defaultPlaybackRate = 0.8;
+            video.load();
+        }
+    </script>
+    <style>
+        #miVideo {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            opacity: 0.5;
+            z-index: -1;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Welcome to the jungle</h1>
+    <video id="miVideo" type="video/mp4" src="../../video/jirafa.mp4" autoplay muted loop></video>
+    <audio src="../../audio/selva.mp3" autoplay controls autostart loop></audio>
+</body>
+
+</html>
