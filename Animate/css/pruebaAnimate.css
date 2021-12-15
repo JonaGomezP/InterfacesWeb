@@ -1,0 +1,27 @@
+@import '/Animate/node_modules/animate.css/animate.min.css';
+@import '/Animate/node_modules/animate.css/animate.css';
+@import '/Animate/node_modules/animate.css/source/attention_seekers/*';
+
+h1{
+    animation-name: tituloPrincipal;
+    animation-duration: 3s;
+}
+
+@keyframes tituloPrincipal{
+    from{
+        left: 30%;
+        width: 100%
+    }
+    40%{
+        font-size: 300%;
+        left: 60px;
+
+    }
+    to{
+
+    }
+} 
+ h2{
+    animation-name: shakeX;
+ }
+
