@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,18 +8,71 @@
     <title>Francotirador Airsoft</title>
     <link rel="stylesheet" href="../css/landingPage.css">
     <script>
-        window.onload = function(){
+        window.onload = function () {
             let cuerpo = document.querySelector("body");
-            cuerpo.style.width = screen.availHeight + "px";
+            cuerpo.style.width = window.innerWidth + "px";
             cuerpo.style.height = window.innerHeight + "px";
-            cuerpo.style.maxHeight = screen.availHeight + "px";
+            cuerpo.style.maxHeight = window.outerHeight + "px";
 
+
+            let seccion = document.querySelector("section");
+            let estilosBody = getComputedStyle(cuerpo);
+            let ancho = estilosBody.getPropertyValue("width") + "px";
+            seccion.style.lineHeight = ancho;
+
+            let estilosSection = getComputedStyle(seccion);
+            let anchoSection = parseInt(estilosSection.getPropertyValue("width"));
+            let parrafo = document.getElementById("primerParrafo");
+            parrafo.style.left = anchoSection / 2 - parrafo.clientWidth / 2 + "px";
+
+
+            let objetivo = document.querySelector("img");
+            // centrar la pelota en las coordenadas (pageX, pageY)
+            function moveAt(pageX, pageY) {
+                objetivo.style.left = pageX - objetivo.offsetWidth / 2 + 'px';
+                objetivo.style.top = pageY - objetivo.offsetHeight / 2 + 'px';
+            }
+
+            // mover nuestra pelota posicionada absolutamente bajo el puntero
+            moveAt(event.pageX, event.pageY);
+
+            function onMouseMove(event) {
+                moveAt(event.pageX, event.pageY);
+            }
+
+            // (2) mover la pelota con mousemove
+            document.addEventListener('mousemove', onMouseMove);
+
+
+            objetivo.ondragstart = function () {
+                return false;
+            };
+
+
+            //Texto curvo
+            circlearray = parrafo.textContent.split('')
+            parrafo.textContent = ''
+            for (var i = 0; i < circlearray.length; i++) {
+                parrafo.innerHTML += '<span style="transform:rotate(' + ((i + 1) * 10) + 'deg)">' + circlearray[i] + '</span>'
+            }
         }
     </script>
-    
+
 </head>
+
 <body>
     <img id="objetivo" src="../img/objetivo.png" alt="objetivo">
-    
+    <section>
+        <img class="animate__animated animate__bounce animate__pulse" id="primerSniper" src="../img/sniper.png"
+            alt="sniper" style="transform: rotate(45deg);">
+        <input type="button" value="!COMPRAR¡">
+        <img class="animate__animated animate__bounce animate__pulse" id="segundoSniper" src="../img/sniper2.png"
+            alt="sniper">
+        <p id="primerParrafo">¿Estás listo para la guerra?</p>
+        <p id="segundoParrafo" class="parrafo">l-86</p>
+
+    </section>
+
 </body>
+
 </html>
