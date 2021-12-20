@@ -46,30 +46,43 @@
 
             objetivo.ondragstart = function () {
                 return false;
-            };
+            };   
 
-
-            //Texto curvo
-            circlearray = parrafo.textContent.split('')
-            parrafo.textContent = ''
-            for (var i = 0; i < circlearray.length; i++) {
-                parrafo.innerHTML += '<span style="transform:rotate(' + ((i + 1) * 10) + 'deg)">' + circlearray[i] + '</span>'
-            }
         }
+
+        //Mostrar información
+        // function mostrar(idParrafo){
+        //     let cuerpo = document.querySelector("body");
+        //     let parrafo = document.getElementById(idParrafo);
+        //     parrafo.addEventListener('mouseout', function(){
+        //         cuerpo.removeChild(nuevoDiv);
+        //     } );
+        //     parrafo.style.color = "red";
+        //     let seccion = document.querySelector("section");
+        //     let estilosSeccion = getComputedStyle(seccion);
+        //     let anchoSeccion = estilosSeccion.getPropertyValue("width") + "px";
+        //     let nuevoDiv = document.createElement("div");
+        //     nuevoDiv.style.width = seccion.clientWidth + "px";
+        //     nuevoDiv.style.height = seccion.clientHeight + "px";
+        //     nuevoDiv.style.position = "absolute";
+        //     nuevoDiv.style.zIndex = 10;
+        //     nuevoDiv.style.backgroundColor = "black";
+        //     cuerpo.appendChild(nuevoDiv);
+        //     }
     </script>
 
 </head>
 
-<body>
+<body media="">
     <img id="objetivo" src="../img/objetivo.png" alt="objetivo">
     <section>
         <img class="animate__animated animate__bounce animate__pulse" id="primerSniper" src="../img/sniper.png"
             alt="sniper" style="transform: rotate(45deg);">
-        <input type="button" value="!COMPRAR¡">
+        <input type="button" value="!COMPRAR!">
         <img class="animate__animated animate__bounce animate__pulse" id="segundoSniper" src="../img/sniper2.png"
             alt="sniper">
-        <p id="primerParrafo">¿Estás listo para la guerra?</p>
-        <p id="segundoParrafo" class="parrafo">l-86</p>
+        <p id="primerParrafo">¿Estás listo para la batalla?</p>
+        <p id="segundoParrafo" class="parrafo" onmouseover="mostrar(this.id)">l-86</p>
 
     </section>
 
