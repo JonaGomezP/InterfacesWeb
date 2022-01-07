@@ -89,7 +89,7 @@ input:hover{
     to{box-shadow: rgb(22, 23, 24) 0 0 45px 1px;}
 }
 #primerSniper{
-    transform: rotate(40deg);
+    transform: rotate(80deg);
     width: 20em;
     height: 20em;
     position: relative;
@@ -100,7 +100,7 @@ input:hover{
     animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 #segundoSniper{
-    transform: rotate(-130deg);
+    transform: rotate(-3600deg);
     width: 20em;
     height: 20em;
     object-fit: cover;
