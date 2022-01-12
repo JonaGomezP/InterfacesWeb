@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        window.onload = function () {
+            let boton = document.querySelector("button");
+            let div = document.querySelector("div");
+            let nuevaCaja = document.createElement("div");
+            nuevaCaja.setAttribute("id", "nuevaCaja");
+            nuevaCaja.hidden = true;
+            let informacion = document.createTextNode("En caso de empeoramiento llame al 112");
+            let nuevoParrafo = document.createElement("p");
+            nuevoParrafo.appendChild(informacion);
+            let nuevoBoton = document.createElement("button");
+            nuevaCaja.appendChild(nuevoParrafo);
+            nuevoBoton.textContent = "X";
+            nuevoBoton.style.position = "absolute";
+            nuevoBoton.style.bottom = "0";
+            nuevoBoton.style.right = "0"
+            nuevaCaja.appendChild(nuevoBoton);
+            div.appendChild(nuevaCaja);
+
+        }
+        $(document).ready(function () {
+            $("#boton").click(function () {
+                $("#nuevaCaja").prop("hidden", false)
+                let boton = document.querySelector("button");
+                $("#boton").css({
+                    visibility:"hidden"
+                })
+                let div = document.querySelector("div");
+                let nuevaCaja = document.createElement("div");
+                nuevaCaja.setAttribute("id", "nuevaCaja");
+                $("#nuevaCaja").css({
+                    position: "absolute",
+                    width:"fit-content",
+                    height:"fit-content",
+                    backgroundColor: "rgb(105, 170, 255)",
+                    backgroundClip:"padding-box",
+                    border:"solid 8px rgba(0,0,0,0.5)",
+                    borderRadius:"15px",
+                    padding: "2%",
+                    textTransform:"uppercase",
+                    fontSize:"2em",
+                    color:"white",
+                    backgroundClip: "padding-box",
+                    justifyContent: "space-between",
+                    left:"0",
+                    right:"0",
+                    top:"0",
+                    bottom:"0",
+                    margin:"auto",
+                    textAlign:"center",
+                    verticalAlign:"middle",
+                    zIndex: "0"
+                });
+            })
+            $("#nuevaCaja").click(function(){
+                $("#boton").css({
+                    visibility:"visible"
+                })                
+                $("#nuevaCaja").prop("hidden",true)
+            })
+        });
+
+
+
+    </script>
+    <style type="text/css">
+        *{
+            overflow: hidden;
+        }
+        div {
+            width: 40%;
+            position: relative;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 2%;
+            background-color: rgba(223, 223, 223, 0.665);
+            color: rgb(28, 28, 28);
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            text-align: justify;
+            border: rgb(105, 170, 255) 2px solid;
+            padding: 25px;
+            word-spacing: 3px;
+        }
+
+        h3 {
+            text-transform: uppercase;
+            color: rgb(30, 30, 111);
+        }
+
+        ul {
+            padding: 10px;
+            list-style-position: inside;
+            margin-left: 3%;
+            margin-right: 3%;
+        }
+
+        ul li {
+            margin-top: 15px;
+        }
+
+        button {
+            position: relative;
+            margin-left: 50%;
+            margin-right: 50%;
+            border: none;
+        }
+
+        img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div>
+        <h3>Procedimiento por positivo COVID</h3>
+        <span><b>Aunque no hay un tratamiento específico para el COVID-19, debe descansar mucho, beber abundantes
+                líquidos y tomar medicamentos para bajar la fiebre si es necesario.</b></span>
+        <ul>
+            <li>Quédese en casa, excepto para recibir atención médica de urgencia o si siente que no está seguro en su
+                casa. Use una mascarilla si necesita salir de su casa.</li>
+            <li>Antes de visitar a su prestador de atención médica o de acudir al departamento de emergencias, llame y
+                avise que se está aislando porque tiene COVID-19.</li>
+            <li>En la medida de lo posible, quédese en una habitación específica de su casa y use un baño separado.</li>
+            <li>Mantenga una distancia de al menos 6 pies (o 2 metros) del resto de las personas de su casa en todo
+                momento.</li>
+            <li>Use una mascarilla si está en una habitación con otras personas o mascotas, a menos que tenga dificultad
+                para respirar.</li>
+            <li>No comparta los objetos de la casa.</li>
+            <li>Monitoree sus niveles de oxígeno en sangre. Es posible que las personas que han sido diagnosticadas con
+                COVID-19 tengan niveles de oxígeno inferiores a los normales en su sangre antes de que sientan la falta
+                de aire. Descubrir pronto los niveles de oxígeno bajos puede ayudarle a buscar atención médica antes.
+                Esto podría hacer que la enfermedad sea menos grave.</li>
+            <li>Si no puede evitar el contacto cercano con las personas que usted cuida (por ejemplo, sus hijos),
+                entonces ellos deben hacer cuarentena mientras usted esté enfermo. Ellos también deben hacer cuarentena
+                durante 14 días después de que usted se haya recuperado. Obtenga más información sobre los contactos
+                cercanos y la cuarentena.</li>
+        </ul>
+        <button id="boton"><img src="img/info.png" alt="más información"></button>
+    </div>
+</body>
+
+</html>
