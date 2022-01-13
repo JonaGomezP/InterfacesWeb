@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        window.onload = function () {
+            let boton = document.querySelector("button");
+            let div = document.querySelector("div");
+            let nuevaCaja = document.createElement("div");
+            nuevaCaja.setAttribute("id", "nuevaCaja");
+            nuevaCaja.hidden = true;
+            let informacion = document.createTextNode("En caso de empeoramiento llame al 112");
+            let nuevoParrafo = document.createElement("p");
+            nuevoParrafo.appendChild(informacion);
+            let nuevoBoton = document.createElement("button");
+            nuevaCaja.appendChild(nuevoParrafo);
+            nuevoBoton.textContent = "X";
+            nuevoBoton.style.position = "absolute";
+            nuevoBoton.style.bottom = "0";
+            nuevoBoton.style.right = "0"
+            nuevaCaja.appendChild(nuevoBoton);
+            div.appendChild(nuevaCaja);
+
+        }
+        $(document).ready(function () {
+            $("#boton").click(function () {
+                $("#nuevaCaja").prop("hidden", false)
+                let boton = document.querySelector("button");
+                $("#boton").css({
+                    visibility:"hidden"
+                })
+                let div = document.querySelector("div");
+                let nuevaCaja = document.createElement("div");
+                nuevaCaja.setAttribute("id", "nuevaCaja");
+                $("#nuevaCaja").css({
+                    position: "absolute",
+                    width:"fit-content",
+                    height:"fit-content",
+                    backgroundColor: "rgb(105, 170, 255)",
+                    backgroundClip:"padding-box",
+                    border:"solid 8px rgba(0,0,0,0.5)",
+                    borderRadius:"15px",
+                    padding: "2%",
+                    textTransform:"uppercase",
+                    fontSize:"2em",
+                    color:"white",
+                    backgroundClip: "padding-box",
+                    justifyContent: "space-between",
+                    left:"0",
+                    right:"0",
+                    top:"0",
+                    bottom:"0",
+                    margin:"auto",
+                    textAlign:"center",
+                    verticalAlign:"middle",
+                    zIndex: "0"
+                });
+            })
+            $("#nuevaCaja").click(function(){
+                $("#boton").css({
+                    visibility:"visible"
+                })                
+                $("#nuevaCaja").prop("hidden",true)
+            })
+        });
+
+
+
+    </script>
+    <style type="text/css">
+        *{
+            overflow: hidden;
+        }
+        body{
+            background-color: #0c3559;
+
+        }
+        body img{
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            width: 40%;
+            height: 100%;
+            z-index: -1;
+            object-fit: cover;
+        }
+        #principal {
+            width: 19%;
+            min-height: 15%;
+            position: fixed;
+            margin-left: 62%;
+            margin-right: auto;
+            background-color: transparent;
+            color: rgb(28, 28, 28);
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            text-align: justify;
+            border: #ffedab 5px solid;
+            border-radius: 30px;
+            padding: 0;
+            word-spacing: 3px;
+            background-clip: padding-box;
+            border-style: double;
+        }
+
+        h3 {
+            text-transform: uppercase;
+            color: rgb(30, 30, 111);
+        }
+
+        ul {
+            list-style-position: inside;
+            margin-left: 3%;
+            margin-right: 3%;
+        }
+
+        ul li {
+            margin-top: 15px;
+        }
+
+        button {
+            position: relative;
+            margin-left: 50%;
+            margin-right: 50%;
+            border: none;
+        }
+
+        img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+        }
+        span{
+            line-height: 2rem;
+            margin: 0;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        p{
+            margin:0;
+            padding: 0;
+        }
+    </style>
+
+</head>
+
+<body>
+    <button id="pagos">Realizar pago</button>
+    <img src="img/medico.jpg" alt="">
+    <div id="principal">
+        <span>
+            <p>Pedir cita presencial</p>
+            <p>Mis citas</p>
+            <p>Pagos</p>
+        </span>
+    </div>
+</body>
+
+</html>
