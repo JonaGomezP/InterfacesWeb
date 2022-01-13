@@ -9,79 +9,99 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
         window.onload = function () {
-            let boton = document.querySelector("button");
-            let div = document.querySelector("div");
-            let nuevaCaja = document.createElement("div");
-            nuevaCaja.setAttribute("id", "nuevaCaja");
-            nuevaCaja.hidden = true;
-            let informacion = document.createTextNode("En caso de empeoramiento llame al 112");
-            let nuevoParrafo = document.createElement("p");
-            nuevoParrafo.appendChild(informacion);
-            let nuevoBoton = document.createElement("button");
-            nuevaCaja.appendChild(nuevoParrafo);
-            nuevoBoton.textContent = "X";
-            nuevoBoton.style.position = "absolute";
-            nuevoBoton.style.bottom = "0";
-            nuevoBoton.style.right = "0"
-            nuevaCaja.appendChild(nuevoBoton);
-            div.appendChild(nuevaCaja);
-
+            $("#sombra").css({
+                position: "fixed",
+                right: "0",
+                bottom: "0",
+                width: "40%",
+                height: "90%",
+                objectFit: "cover",
+                backgroundColor: "#0c3559",
+                opacity: "0.8"
+            })
         }
-        $(document).ready(function () {
-            $("#boton").click(function () {
-                $("#nuevaCaja").prop("hidden", false)
-                let boton = document.querySelector("button");
-                $("#boton").css({
-                    visibility:"hidden"
-                })
-                let div = document.querySelector("div");
-                let nuevaCaja = document.createElement("div");
-                nuevaCaja.setAttribute("id", "nuevaCaja");
-                $("#nuevaCaja").css({
-                    position: "absolute",
-                    width:"fit-content",
-                    height:"fit-content",
-                    backgroundColor: "rgb(105, 170, 255)",
-                    backgroundClip:"padding-box",
-                    border:"solid 8px rgba(0,0,0,0.5)",
-                    borderRadius:"15px",
-                    padding: "2%",
-                    textTransform:"uppercase",
-                    fontSize:"2em",
-                    color:"white",
-                    backgroundClip: "padding-box",
-                    justifyContent: "space-between",
-                    left:"0",
-                    right:"0",
-                    top:"0",
-                    bottom:"0",
-                    margin:"auto",
-                    textAlign:"center",
-                    verticalAlign:"middle",
-                    zIndex: "0"
-                });
-            })
-            $("#nuevaCaja").click(function(){
-                $("#boton").css({
-                    visibility:"visible"
-                })                
-                $("#nuevaCaja").prop("hidden",true)
-            })
-        });
 
+        function llamar(){
+            let cuerpo = document.querySelector("body");
+            let estilosCuerpo = window.getComputedStyle(cuerpo)
+            let sombra = document.getElementById("sombra");
+            cuerpo.removeChild(sombra);
+            let nuevaSombra = document.createElement("div");
+            nuevaSombra.style.position = "fixed";
+            nuevaSombra.style.left = "0";
+            nuevaSombra.style.bottom = "0";
+            nuevaSombra.style.width = "60%";
+            nuevaSombra.style.height = "90%";
+            nuevaSombra.style.backgroundColor = "#0c3559";
+            nuevaSombra.style.opacity = "0.8";
+            cuerpo.appendChild(nuevaSombra);
 
+            let medico = document.getElementById("medico");
+            medico.style.opacity = "0.6";
+
+            let flotante = document.createElement("div");
+            flotante.id = "flotante"
+            flotante.style.position = "absolute";
+            flotante.style.width = "20%";
+            flotante.style.height = "40%";
+            flotante.style.right = "10%";
+            flotante.style.top = "35%";
+            flotante.style.borderRadius ="20px"
+            console.log(flotante.offsetHeight)
+    
+            flotante.style.backgroundColor = "#0c3559";
+            
+            cuerpo.appendChild(flotante);
+        }
 
     </script>
     <style type="text/css">
-        *{
+        * {
             overflow: hidden;
         }
-        body{
-            background-color: #0c3559;
 
+        body {
+            background-color: #0c3559;
+            background-color: #ffffff;
+            height: 100%;
+            width: 100%;
         }
-        body img{
+
+        nav {
             position: fixed;
+            top: 0;
+            width: 100%;
+            height: 10%;
+            background-color: #0c3559;
+            margin: 0;
+            left: 0;
+        }
+
+        nav ul {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            list-style: none;
+        }
+
+        nav ul li {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 1.5em;
+            color: #ffffff;
+            text-transform: uppercase;
+        }
+
+        a:link {
+            text-decoration: none;
+        }
+
+        a li:hover {
+            text-decoration: underline;
+        }
+
+
+        #medico {
+            position: absolute;
             right: 0;
             bottom: 0;
             width: 40%;
@@ -89,23 +109,7 @@
             z-index: -1;
             object-fit: cover;
         }
-        #principal {
-            width: 19%;
-            min-height: 15%;
-            position: fixed;
-            margin-left: 62%;
-            margin-right: auto;
-            background-color: transparent;
-            color: rgb(28, 28, 28);
-            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-            text-align: justify;
-            border: #ffedab 5px solid;
-            border-radius: 30px;
-            padding: 0;
-            word-spacing: 3px;
-            background-clip: padding-box;
-            border-style: double;
-        }
+
 
         h3 {
             text-transform: uppercase;
@@ -122,19 +126,9 @@
             margin-top: 15px;
         }
 
-        button {
-            position: relative;
-            margin-left: 50%;
-            margin-right: 50%;
-            border: none;
-        }
 
-        img {
-            width: 50px;
-            height: 50px;
-            object-fit: cover;
-        }
-        span{
+
+        span {
             line-height: 2rem;
             margin: 0;
             padding: 0;
@@ -142,24 +136,194 @@
             text-align: center;
         }
 
-        p{
-            margin:0;
+        p {
+            margin: 0;
             padding: 0;
+        }
+
+        #status {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 60%;
+            height: 90%;
+            object-position: left;
+            object-fit: contain;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .caja {
+            color: white;
+            width: 40%;
+            height: auto;
+            background-color: #ffedab;
+            position: relative;
+            margin-top: 10%;
+            padding: 1em;
+            margin-left: 4px;
+            margin-right: 4px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        h3 {
+            margin-left: 5%;
+            position: relative;
+        }
+
+        #videollamada {
+            position: absolute;
+            width: 4rem;
+            height: fit-content;
+            top: 60%;
+            font-size: larger;
+        }
+
+        table {
+            position: relative;
+            text-align: center;
+            border-collapse: collapse;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            display: inline-flexbox;
+            min-width: 30%;
+        }
+
+        @media (max-width: 950px) {
+            table {
+                visibility: hidden;
+            }
+        }
+
+        table thead {
+            background-color: #0c3559;
+            color: white;
+        }
+
+        tr {
+            border-bottom: black solid 1px;
+
+        }
+
+        td {
+            height: 3rem;
+            color: black;
+        }
+
+        button {
+            margin: 3px;
+            background-image: url(img/videollamada.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            width: auto;
+            height: 3rem;
         }
     </style>
 
 </head>
 
 <body>
-    <button id="pagos">Realizar pago</button>
-    <img src="img/medico.jpg" alt="">
-    <div id="principal">
-        <span>
-            <p>Pedir cita presencial</p>
-            <p>Mis citas</p>
-            <p>Pagos</p>
-        </span>
+    <nav>
+        <ul>
+            <a href="tarea4.html">
+                <li>Inicio</li>
+            </a>
+            <a href="">
+                <li>Agenda</li>
+            </a>
+            <a href="">
+                <li>Turnos</li>
+            </a>
+        </ul>
+    </nav>
+    <img src="img/medico.jpg" alt="medico" id="medico">
+    <div id="sombra"></div>
+    <div id="status">
+        <div class="caja">
+            <h3>Próximas citas presenciales</h3>
+            <table>
+                <thead>
+                    <th>Paciente</th>
+                    <th>Fecha</th>
+                    <th>Hora</th>
+                    <th>Código</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Jose Carmona</td>
+                        <td>25/01/2022</td>
+                        <td>10:40</td>
+                        <td>P01</td>
+                    </tr>
+                    <tr>
+                        <td>María Muñoz</td>
+                        <td>02/02/2022</td>
+                        <td>9:15</td>
+                        <td>P02</td>
+                    </tr>
+                    <tr>
+                        <td>Miriam Arconada</td>
+                        <td>05/02/2022</td>
+                        <td>13:10</td>
+                        <td>P03</td>
+                    </tr>
+                    <tr>
+                        <td>Juan Ramón Ortiz</td>
+                        <td>05/02/2022</td>
+                        <td>13:30</td>
+                        <td>P04</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="caja">
+            <h3>Próximas citas online</h3>
+            <table>
+                <thead>
+                    <th>Paciente</th>
+                    <th>Fecha</th>
+                    <th>Hora</th>
+                    <th>Código</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Jose Carmona</td>
+                        <td>25/01/2022</td>
+                        <td>10:40</td>
+                        <td>V01</td>
+                    </tr>
+                    <tr>
+                        <td>María Muñoz</td>
+                        <td>02/02/2022</td>
+                        <td>9:15</td>
+                        <td>V02</td>
+
+                    </tr>
+                    <tr>
+                        <td>Miriam Arconada</td>
+                        <td>05/02/2022</td>
+                        <td>13:10</td>
+                        <td>V03</td>
+
+                    </tr>
+                    <tr>
+                        <td>Juan Ramón Ortiz</td>
+                        <td>05/02/2022</td>
+                        <td>13:30</td>
+                        <td>V04</td>
+
+                    </tr>
+                </tbody>
+            </table>
+            <button onclick="llamar()"></button>
+        </div>
     </div>
+
 </body>
 
 </html>
