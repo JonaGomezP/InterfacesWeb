@@ -19,9 +19,11 @@
                 backgroundColor: "#0c3559",
                 opacity: "0.8"
             })
+
+
         }
 
-        function llamar(){
+        function llamar() {
             let cuerpo = document.querySelector("body");
             let estilosCuerpo = window.getComputedStyle(cuerpo)
             let sombra = document.getElementById("sombra");
@@ -42,15 +44,38 @@
             let flotante = document.createElement("div");
             flotante.id = "flotante"
             flotante.style.position = "absolute";
+            flotante.style.display = "flex";
+            flotante.style.justifyContent = "center";
+            flotante.style.alignItems = "center";
             flotante.style.width = "20%";
             flotante.style.height = "40%";
             flotante.style.right = "10%";
             flotante.style.top = "35%";
-            flotante.style.borderRadius ="20px"
-            console.log(flotante.offsetHeight)
-    
+            flotante.style.border = "double 1em rgba(255,237,171, 0.7)";
+            flotante.style.borderRadius = "20px"
             flotante.style.backgroundColor = "#0c3559";
-            
+            flotante.style.backgroundClip = "padding-box";
+            flotante.style.padding = "1em";
+
+            let formulario = document.createElement("form");
+            formulario.style.position = "relative";
+            formulario.style.display = "flex";
+            formulario.style.justifyContent = "space-between";
+            formulario.style.flexDirection = "column";
+
+            let codigo = document.createElement("input");
+            codigo.type = "text";
+            codigo.placeholder = "Código de videollamada";
+            codigo.style.height = "3rem";
+            codigo.style.fontSize = "2rem";
+            formulario.appendChild(codigo);
+
+            let llamar = document.createElement("input");
+            llamar.type = "image";
+            llamar.src = "img/llamar.png";
+            formulario.appendChild(llamar)
+
+            flotante.appendChild(formulario)
             cuerpo.appendChild(flotante);
         }
 
@@ -65,7 +90,14 @@
             background-color: #ffffff;
             height: 100%;
             width: 100%;
+            top: 0;
+            left: 0;
+            margin: 0;
         }
+
+
+
+
 
         nav {
             position: fixed;
@@ -147,6 +179,7 @@
             bottom: 0;
             width: 60%;
             height: 90%;
+            max-width: 90%;
             object-position: left;
             object-fit: contain;
             display: flex;
@@ -155,9 +188,39 @@
             align-items: center;
         }
 
-        .caja {
+        #cajaTexto {
             color: white;
-            width: 40%;
+            width: 50%;
+            height: auto;
+            position: relative;
+            margin-top: 10%;
+            padding: 1em;
+            margin-left: 4px;
+            margin-right: 4px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            justify-content: space-between;
+        }
+
+        .texto {
+            padding: 2%;
+            position: relative;
+            width: fit-content;
+            height: 50%;
+            background-color: rgba(12, 53, 89, 0.9);
+            color: white;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            border: double #ffedab 5px;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        #tabla {
+            color: white;
+            width: fit-content;
             height: auto;
             background-color: #ffedab;
             position: relative;
@@ -244,44 +307,21 @@
     <img src="img/medico.jpg" alt="medico" id="medico">
     <div id="sombra"></div>
     <div id="status">
-        <div class="caja">
-            <h3>Próximas citas presenciales</h3>
-            <table>
-                <thead>
-                    <th>Paciente</th>
-                    <th>Fecha</th>
-                    <th>Hora</th>
-                    <th>Código</th>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Jose Carmona</td>
-                        <td>25/01/2022</td>
-                        <td>10:40</td>
-                        <td>P01</td>
-                    </tr>
-                    <tr>
-                        <td>María Muñoz</td>
-                        <td>02/02/2022</td>
-                        <td>9:15</td>
-                        <td>P02</td>
-                    </tr>
-                    <tr>
-                        <td>Miriam Arconada</td>
-                        <td>05/02/2022</td>
-                        <td>13:10</td>
-                        <td>P03</td>
-                    </tr>
-                    <tr>
-                        <td>Juan Ramón Ortiz</td>
-                        <td>05/02/2022</td>
-                        <td>13:30</td>
-                        <td>P04</td>
-                    </tr>
-                </tbody>
-            </table>
+        <div id="cajaTexto">
+            <p class="texto">
+                En la actualidad las consultas médicas por videollamada, en algunas especialidades médicas, han dejado
+                de ser una opción y se han convertido en una necesidad.</p>
+            <p class="texto">Desde nuestra agenda podrás marcar las citas como presenciales o remotas (por videoconferencia). Para las
+                citas remotas se creará automáticamente una sala de videoconferencia y se notificará al paciente de la
+                fecha/hora de la cita así como del enlace que debe usar para unirse a la videoconferencia en el momento
+                acordado. El profesional, por su parte, podrá iniciar la llamada con un solo click desde la cita en su
+                agenda.</p>
+            <p class="texto"> Nuestra empresa está preparada para afrontar
+                esta realidad. Nuestra aplicación web también permite que los pacientes atendidos por videoconferencia
+                puedan pagar cómodamente desde su casa con sus tarjetas de crédito. Este pago, además, se puede realizar
+                por adelantado por parte del paciente al solicitar su visita desde nuestro portal de cita online.</p>
         </div>
-        <div class="caja">
+        <div id="tabla">
             <h3>Próximas citas online</h3>
             <table>
                 <thead>
