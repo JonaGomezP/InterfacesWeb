@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica 1 - Trimestre 2</title>
+    <style>
+        body {
+            background-color: #E8E1CC;
+            color: black;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: left;
+        }
+
+        form {
+            width: 830px;
+            margin: 1em auto;
+            display: flex;
+        }
+
+        .letras {
+            text-align: right;
+            padding-right: .35em;
+            width: 40%;
+        }
+
+        .centrados {
+            text-align: center;
+        }
+
+        .cabe {
+            text-align: center;
+            background-color: #636058;
+            color: #E8E1CC;
+            height: 80px;
+        }
+        .cabe2 {
+            text-align: center;
+            background-color: transparent;
+            color: orange;
+            height: 10px;
+            font-size: 30px;
+            margin: 0;
+            padding: 0;
+        }
+
+        input[type='text'],
+        input[type='password'] {
+            width: 170px;
+        }
+
+        input[type='reset'],
+        input[type='submit'] {
+            padding: .25em;
+            width: 100px;
+        }
+
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+
+        table {
+            max-width: 400px;
+            min-width: 350px;
+            margin: 0 0.5em;
+        }
+
+    </style>
+</head>
+
+<body>
+    <form id="formu" method="GET" action="resultado.html">
+
+        <table>
+            <tr>
+                <td colspan=2 class="cabe">
+                    <h3>Datos de Usuario</h3>
+                </td>
+            </tr>
+            <tr>
+                <td colspan=2 class="cabe2">
+                    <h5>¿Usuario nuevo? Regístrate</h5>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="letras">Usuario:</td>
+                <td><input type="text" name="usuario" placeholder="Introduce un usuario..."></td>
+            </tr>
+            <tr>
+                <td class="letras">Clave:</td>
+                <td><input type="password" name="clave" placeholder="Introduce una clave"></td>
+            </tr>
+            <tr>
+                <td class="letras">Repite Clave:</td>
+                <td><input type="password" placeholder="Vuelve a introducir al clave"></td>
+            </tr>
+            <tr>
+                <td class="letras">Pregunta:</td>
+                <td>
+                    <select name="pregunta">
+                        <option value="0">Selecciona una pregunta...</option>
+                        <option value="1">Quien es el tu heroe?</option>
+                        <option value="2">Donde naciste?</option>
+                        <option value="3">Nombre de tu primer amor?</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="letras">Respuesta:</td>
+                <td><input type="text" name="respuesta"></td>
+            </tr>
+            <tr>
+                <td class="letras">Sexo:</td>
+                <td>
+                    <input type="radio" name="sexo"> Masculino <br>
+                    <input type="radio" name="sexo"> Femenino
+                </td>
+            </tr>
+            <tr>
+                <td class="letras">Edad:</td>
+                <td><input type="text" name="edad"></td>
+            </tr>
+
+            <tr>
+                <td class="letras">Teléfono:</td>
+                <td><input type="number" name="contacto" placeholder="Número de contacto"></td>
+            </tr>
+
+            <tr>
+                <td class="letras">Email:</td>
+                <td><input type="text" name="email" placeholder="Escribe un email válido..."></td>
+            </tr>
+
+            <tr>
+                <td colspan="2" class="centrados"><input type="reset" Value="Borrar">
+                    <input type="submit" Value="Enviar">
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan=2 class="cabe2">
+                    <h5>Inicia sesión</h5>
+                </td>
+            </tr>
+            <tr>
+                <td class="letras">Usuario:</td>
+                <td><input type="text" name="nick" placeholder="Introduce tu usuario"></td>
+            </tr>
+            <tr>
+                <td class="letras">Clave:</td>
+                <td><input type="password" name="clave" placeholder="Contraseña"></td>
+            </tr>
+        </table>
+
+
+    </form>
+
+</body>
+
+</html>
