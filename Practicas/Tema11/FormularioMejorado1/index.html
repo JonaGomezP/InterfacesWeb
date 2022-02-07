@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica 1 - Trimestre 2</title>
+    <link rel="stylesheet" href="estilos.css">
+    <script src="functions.js"></script>
+</head>
+
+<body>
+    <form id="formu" method="GET" action="resultado.html">
+        
+        <table>
+            <tr>
+                <td colspan=2 class="cabe"><h3>Datos de Usuario</h3></td>		
+            </tr>
+        
+            <tr>
+                <td class="letras">Nick:</td>
+                <td><input type="text" name="nick" placeholder="Introduce un nick..."></td>
+            </tr>
+            <tr>
+                <td class="letras">Clave:</td>
+                <td><input type="password" name="clave" placeholder="Introduce una clave"></td>
+            </tr>
+            <tr>
+                <td class="letras">Repite Clave:</td>
+                <td><input type="password" placeholder="Vuelve a introducir al clave"></td>
+            </tr>
+            <tr>
+                <td class="letras">Pregunta:</td>
+                <td>
+                    <select name="pregunta">
+                        <option value="0">Selecciona una pregunta...</option>
+                        <option value="1">Quien es el tu heroe?</option>
+                        <option value="2">Donde naciste?</option>
+                        <option value="3">Nombre de tu primer amor?</option>						
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="letras">Respuesta:</td>
+                <td><input type="text" name="respuesta"></td>
+            </tr>
+            <tr>
+                <td class="letras">Sexo:</td>
+                <td>
+                    <input type="radio" name="sexo"> Masculino <br>
+                    <input type="radio" name="sexo"> Femenino 
+                </td>
+            </tr>
+            <tr>
+                <td class="letras">Edad:</td>
+                <td><input type="text" name="edad"></td>
+            </tr>
+            
+            <tr>
+                <td class="letras">Teléfono:</td>
+                <td><input type="number" name="contacto" placeholder="Número de contacto"></td>
+            </tr>
+        
+            <tr>
+                <td class="letras">Email:</td>
+                <td><input type="text" name="email" placeholder="Escribe un email válido..."></td>
+            </tr>
+            
+            <tr>
+                <td colspan="2" class="centrados"><input type="reset" Value="Borrar">
+                <input type="submit" Value="Enviar"></td>
+            </tr>
+        </table>
+
+
+    </form>	
+    
+</body>
+</html>
+
